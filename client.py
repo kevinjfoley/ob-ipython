@@ -11,7 +11,7 @@ interested_lock = threading.Lock()
 interested = []
 
 def msg_router(io, shell):
-    while True:
+    while True and args.execute:
         msg = io()
         msg['channel'] = 'io'
         msgid = msg['parent_header'].get('msg_id', None)
